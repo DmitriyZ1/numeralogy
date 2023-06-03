@@ -9,16 +9,11 @@ interface ig{
 
 
 export  const Home: React.FC<ig> = ({fun}) => {
-    
-    
     return(
         <>
             <div className="container">
-
                 <Form fun={fun}/>
-
             </div>
-
         </>
     )
 }  

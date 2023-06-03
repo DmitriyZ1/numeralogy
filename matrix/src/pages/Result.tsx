@@ -5,7 +5,6 @@ import { Resulttext } from "../components/Resulttext";
 import { useNavigate } from "react-router-dom"
 
 interface igr{
-    
     n1:string;
     n2:string;
     n3:string;
@@ -23,10 +22,11 @@ export const Result:React.FC<igr> = ({n1,n2,n3,n4,n5,n6,n7,n8,n9, restext}) => {
     return(
         <>
             <div className="container">
-                <button className="waves-effect waves-light btn " onClick={() => {nav('/')}}>назад</button>
-                <Tabl n1={n1} n2={n2} n3={n3} n4={n4} n5={n5} n6={n6} n7={n7} n8={n8} n9={n9} />
-                    
-                <Resulttext objResult={restext}/>
+                <div className="result_content">
+                    <button className="waves-effect waves-light btn " onClick={() => {nav('/')}}>назад</button>
+                    <Tabl n1={n1} n2={n2} n3={n3} n4={n4} n5={n5} n6={n6} n7={n7} n8={n8} n9={n9} />
+                    <Resulttext objResult={restext}/>
+                </div>
             </div>
         </>
     )

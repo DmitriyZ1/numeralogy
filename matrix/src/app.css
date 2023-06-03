@@ -7,14 +7,12 @@
    
 }   
 
-
 .formshow{
     margin: 0px;
 }
 
 .myform{
   margin-top: 100px;
-  
 }
 
 .tabl{
@@ -88,4 +86,8 @@
 .error-input_content button{
     display: block;
     margin: 1px auto;
+}
+
+.result_content{
+    margin-top: 30px;
 }

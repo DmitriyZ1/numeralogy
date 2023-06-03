@@ -5,10 +5,6 @@ interface prForm {
     fun(a:string, b:string, c:string ) :void;
 }
 
-
-
-
-
 export const Form:React.FC<prForm> = ({fun}) => {
 
     const rNum = useRef<HTMLInputElement>(null);
@@ -41,36 +37,35 @@ export const Form:React.FC<prForm> = ({fun}) => {
 
     return(
         <>
-                <h2>Введите число</h2>
-                <div className="myform">
-                    
-                    <div className="input-field">
+ 
+            <div className="myform">
+                <div className="row"> 
+                    <div className="input-field col s6">
                         <input type="text" id="ch" ref={rNum} />
                         <label className="active">Число</label>
                     </div>
-                    <div className="input-field">
+                    <div className="input-field col s6">
                         <input type="text" id="m" ref={rMon} />
                         <label className="active">Месяц</label>
                     </div>
-                    <div className="input-field">
+                </div>
+                <div className="row">
+                    <div className="input-field col s12">
                         <input type="text" id="g" ref={rYear}/>
                         <label className="active">Год</label>
                     </div>
-                    <button className="waves-effect waves-light btn " onClick={() => {clickB()}}>ok</button>
                 </div>
+                <button className="waves-effect waves-light btn " onClick={() => {clickB()}}>ok</button>
+            </div>
 
-                {errorWindow && <div className="error-input"> 
-                    <div className="error-input_content">
-                        <div>
-                            <p>Ошибка ввода</p>
-                            <button className="waves-effect waves-light btn " onClick={() => {setErrorWindow(false)}}>ok</button>
-                        </div>
+            {errorWindow && <div className="error-input"> 
+                <div className="error-input_content">
+                    <div>
+                        <p>Ошибка ввода</p>
+                        <button className="waves-effect waves-light btn " onClick={() => {setErrorWindow(false)}}>ok</button>
                     </div>
-                </div>}
-            
-          
+                </div>
+            </div>}
         </>
     )
-
-
 }

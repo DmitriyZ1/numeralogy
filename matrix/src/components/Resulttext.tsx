@@ -12,16 +12,21 @@ export const Resulttext:React.FC<prres> = ({objResult}) => {
     const [fileDownl, setFileDownl] = useState<boolean>(false);
 
     async function requestFile(arr:string[]) {
-        let st = await fetch('/b',{
-            method: 'POST',
-            body: JSON.stringify(arr),
-            headers: {
-                'Accept' : 'application/json',
-                'Content-Type' : 'application/json'
-            }
-        });
-        let stparse = await st.json();
-        setFileDownl(stparse);
+        try{
+            let st = await fetch('/b',{
+                method: 'POST',
+                body: JSON.stringify(arr),
+                headers: {
+                    'Accept' : 'application/json',
+                    'Content-Type' : 'application/json'
+                }
+            });
+            let stparse = await st.json();
+            setFileDownl(stparse);
+        } catch(e){
+            throw e
+        }
+       
     }
     
 
@@ -87,7 +92,6 @@ export const Resulttext:React.FC<prres> = ({objResult}) => {
         <div className="result"> 
             
            {fileDownl && <a href="./files/result.docx"> Скачать файл docx </a> } 
-            
             
         </div>
     )

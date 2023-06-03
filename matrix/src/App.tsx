@@ -5,11 +5,12 @@ import { Result } from './pages/Result';
 import { Error } from './pages/Error';
 
 import {Routes, Route} from 'react-router-dom';
+import 'materialize-css';
 import './app.css'
 
 
-const App :React.FC = () => {   
-
+const App :React.FC = () => {  
+    
     const [restext, setRestext] = useState<object>({})
     
     const [n1, setN1] = useState<string>('');
@@ -22,7 +23,6 @@ const App :React.FC = () => {
     const [n8, setN8] = useState<string>('');
     const [n9, setN9] = useState<string>('');
    
-    
     const clickBut = (a:string,b:string,c:string):void => {
         let ch:string = a;
         let m:string = b;
@@ -168,14 +168,10 @@ const App :React.FC = () => {
   return (
     <div className="ap">
       <Routes>
-       
         <Route  path="/" element={<Home fun={clickBut} />} /> 
         <Route  path="/result" element={<Result n1={n1} n2={n2} n3={n3} n4={n4} n5={n5} n6={n6} n7={n7} n8={n8} n9={n9} restext={restext} />} /> 
         <Route  path="*" element={<Error />} /> 
       </Routes>
-      
-     
-     
     </div>
   ); 
 }
