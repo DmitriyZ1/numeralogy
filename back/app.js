@@ -9,6 +9,12 @@ const path = require('path');
 
 app.use(express.json());  
 
+//app.use(express.static(path.join(__dirname, '../', 'matrix/', 'build')));
+
+// app.get('/', function (req, res) {
+//     res.sendFile(path.join(__dirname, '../', 'matrix/', 'build', 'index.html'));
+// });
+
 app.listen(PORT, function() {      
     console.log(PORT)
 });
